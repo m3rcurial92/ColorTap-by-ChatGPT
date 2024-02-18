@@ -5,6 +5,8 @@
 
 exports.handler = async (event, context) => {
   try {
+	console.log('Function triggered'); // Add this line for logging
+
     const scoresUrl = 'https://raw.githubusercontent.com/m3rcurial92/colortap.io/main/scores.json';
     const { GITHUB_TOKEN } = process.env;
 
@@ -41,7 +43,9 @@ exports.handler = async (event, context) => {
       },
       body: JSON.stringify(scoresData),
     });
-
+	
+	console.log('Update response:', updateResponse); // Add this line for logging
+	
     if (!updateResponse.ok) {
       return {
         statusCode: updateResponse.status,
@@ -49,11 +53,15 @@ exports.handler = async (event, context) => {
       };
     }
 
+	console.log('Function completed successfully'); // Add this line for logging
+
     return {
       statusCode: 200,
       body: 'Scores updated successfully',
     };
   } catch (error) {
+	console.error('Error updating scores:', error); // Add this line for logging
+	  
     return {
       statusCode: 500,
       body: `Error updating scores: ${error.message}`,
