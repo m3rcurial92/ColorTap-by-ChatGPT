@@ -1,5 +1,5 @@
-const scoresUrl = 'https://m3rcurial92.github.io/colortap.io/scores.json';
-//const scoresUrl = 'https://raw.githubusercontent.com/m3rcurial92/colortap.io/main/scores.json'
+//const scoresUrl = 'https://m3rcurial92.github.io/colortap.io/scores.json';
+const scoresUrl = 'https://raw.githubusercontent.com/m3rcurial92/colortap.io/main/scores.json'
 
 const playerNameInput = document.getElementById('playerName');
 const playerName = playerNameInput.value || 'Anonymous'; // Use 'Anonymous' if no name is provided
@@ -23,7 +23,6 @@ async function fetchScores() {
     // Update the JSON file on GitHub
     await updateScoresOnGitHub(scoresData);
 
-    // Display the updated scores
     return scoresData;
   } catch (error) {
     console.error('Error fetching or updating scores:', error);
