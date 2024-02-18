@@ -1,6 +1,7 @@
 // updateScores.js
 
-import fetch from 'node-fetch';
+//import fetch from 'node-fetch';
+const fetch = require('node-fetch');
 
 exports.handler = async (event, context) => {
   try {
