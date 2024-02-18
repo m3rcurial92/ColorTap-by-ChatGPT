@@ -10,7 +10,8 @@ exports.handler = async (event, context) => {
     const scoresUrl = 'https://raw.githubusercontent.com/m3rcurial92/colortap.io/main/scores.json';
     const { GITHUB_TOKEN } = process.env;
 
-	// Dynamic import for node-fetch
+    // Use the 'esm' module loader to enable ES Module syntax in CommonJS
+    require = require('esm')(module);
     const fetch = require('node-fetch');
 
     // Fetch the current scores from GitHub
