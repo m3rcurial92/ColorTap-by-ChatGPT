@@ -2,7 +2,6 @@
   "name": "ColorTap",
   "version": "1.0.0",
   "description": "",
-  "main": "gameplay.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -12,6 +11,6 @@
   "dependencies": {
     "node-fetch": "^3.3.2",
 	"fetch-blob": "^1.0.0",
-    "formdata-polyfill": "^3.0.0",
+    "formdata-polyfill": "^3.0.0"
   }
 }
