@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+	"esm": "^3.2.25",
     "node-fetch": "^3.3.2",
 	"fetch-blob": "^1.0.0",
     "formdata-polyfill": "^3.0.0"
