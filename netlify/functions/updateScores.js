@@ -1,5 +1,4 @@
-// updateScores.js
-import fetch from "node-fetch";
+const fetch = require('node-fetch');
 require('fetch-blob');
 require('formdata-polyfill');
 
