@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ColorTap</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div id="topControls">
+            <div id="score">Score: 0</div>
+            <div id="timer">Time: 0.00s</div>
+            <div id="cumulativeTimer">Cumulative Time: 0.00s</div>
+        </div>
+        <div id="targetRow">
+			<div id="targetColor" class="square non-clickable"></div>
+		</div>
+        <div id="colorGrid" class="grid-container"></div>
+        <div id="gameControls">
+            <button id="startButton">Restart Game</button>
+            <button id="stopButton">Stop Game</button>
+        </div>
+    </div>
+	
+	<!-- Summary container -->
+	<div id="summaryContainer" class="modal">
+		<div class="modal-content">
+			<span class="close" onclick="closeSummary()">&times;</span>
+			<h2>Game Over!</h2>
+			<p id="summaryContent"></p>
+		</div>
+	</div>
+	
+    <script src="init.js"></script>
+    <script src="gameplay.js"></script>
+</body>
+</html>

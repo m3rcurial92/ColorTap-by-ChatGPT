@@ -1,0 +1,154 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin: 0;
+    background-color: #f0f0f0;
+	font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#targetRow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px; /* Add some space between the targetRow and the grid */
+}
+
+#targetColor {
+    margin-bottom: 10px;
+    width: 100px;
+    height: 100px;
+    /*box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.2), inset 0 0 8px rgba(255, 255, 255, 0.15), inset 0 0 12px rgba(255, 255, 255, 0.1);*/ /* Adjusted for a softer glow effect */
+    border-radius: 8px;
+}
+
+.divider {
+    height: 2px;
+    width: 100%;
+    background-color: #000; /* Set the color you prefer */
+    margin: 10px 0; /* Adjust the margin as needed */
+}
+
+.non-clickable {
+    pointer-events: none;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.square {
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+}
+
+.square:not(#targetColor) {
+	border: 1px solid #f0f0f0; /* Lighter grey border */
+    transition: border-color 0.3s, box-shadow 0.3s; /* Transition for smooth effect */
+}
+
+.square:not(#targetColor):hover {
+    border-color: #888; /* Darker border on hover */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Subtle box-shadow on hover */
+}
+
+#gameControls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    width: 100%;
+}
+
+#score, #timer, #cumulativeTimer {
+    font-size: 22px;
+    margin-top: 20px;
+	margin-bottom: 15px;
+    display: inline-block;
+    margin-right: 10px; /* Add some right margin for spacing */
+    border-right: 1px solid #ccc; /* Add a right border for division */
+    padding-right: 10px; /* Add some padding for better spacing */
+}
+
+#cumulativeTimer {
+	margin-right: 0px;
+	border-right: none;
+	padding-right: 0px;
+}
+
+#startButton, #stopButton {
+    font-size: 22px;
+    padding: 10px 20px;
+    background-color: #867571;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+	margin: 10px 8px; /* Adjusted margin for space between buttons */
+}
+
+#stopButton {
+    background-color: #D82222;
+	margin: 0 8px; /* Adjusted margin for space between buttons */
+}
+
+/* Modal styles */
+#summaryContainer {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.9); /* Adjust the alpha channel for opacity */
+    z-index: 1;
+}
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+	width: 30%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+#summaryModal h2 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+#summaryModal p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.close {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #333;
+}
