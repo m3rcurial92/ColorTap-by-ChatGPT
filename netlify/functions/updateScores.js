@@ -1,6 +1,4 @@
 import fetch from 'node-fetch';
-import 'fetch-blob';
-import 'formdata-polyfill';
 
 exports.handler = async (event, context) => {
   try {
