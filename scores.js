@@ -1,4 +1,5 @@
 const scoresUrl = 'https://m3rcurial92.github.io/colortap.io/scores.json';
+//const scoresUrl = 'https://raw.githubusercontent.com/m3rcurial92/colortap.io/main/scores.json'
 
 const playerNameInput = document.getElementById('playerName');
 const playerName = playerNameInput.value || 'Anonymous'; // Use 'Anonymous' if no name is provided
@@ -23,11 +24,39 @@ async function fetchScores() {
     await updateScoresOnGitHub(scoresData);
 
     // Display the updated scores
-    console.log(scoresData.scores);
+    return scoresData;
   } catch (error) {
     console.error('Error fetching or updating scores:', error);
+	return null;
   }
 }
+
+// Function to display scores in the modal
+async function displayScores() {
+  const scores = await fetchScores();
+  
+  if (scores == null)
+	  return;
+	
+  // Find the scoresColumn element
+  const scoresColumn = document.getElementById('scoresColumn');
+
+  // Create a list element to display the scores
+  const scoresList = document.createElement('ul');
+
+  // Loop through the scores and create list items for each score
+  scores.forEach(score => {
+    const listItem = document.createElement('li');
+    listItem.textContent = `${score.name}: ${score.score}`;
+    scoresList.appendChild(listItem);
+  });
+
+  // Append the scores list to the scoresColumn
+  scoresColumn.appendChild(scoresList);
+}
+
+// Call displayScores when needed, e.g., when the modal is opened
+displayScores();
 
 // Update the JSON file on GitHub
 async function updateScoresOnGitHub(scoresData) {

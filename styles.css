@@ -219,6 +219,21 @@ body {
 	margin-left: 10px;
 }
 
+/* Add these styles to your existing CSS file */
+.summary-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two equal-width columns */
+  grid-gap: 20px; /* Adjust the gap between columns */
+}
+
+.summary-left-column {
+  /* Styles for the left column */
+}
+
+.summary-right-column {
+  /* Styles for the right column */
+}
+
 /* Center the menu on mobile devices */
 @media only screen and (max-width: 600px) {
     #score, #timer, #cumulativeTimer {
