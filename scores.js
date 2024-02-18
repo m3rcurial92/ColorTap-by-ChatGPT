@@ -21,7 +21,7 @@ async function fetchScores() {
     scoresData.scores = scoresData.scores.slice(0, 10);
 
     // Update the JSON file on GitHub
-    await updateScoresOnGitHub(scoresData);
+    await updateScores(scoresData);
 
     return scoresData;
   } catch (error) {
@@ -58,20 +58,48 @@ async function displayScores() {
 displayScores();
 
 // Update the JSON file on GitHub
-async function updateScoresOnGitHub(scoresData) {
+//async function updateScoresOnGitHub(scoresData) {
+//  try {
+//    const response = await fetch(scoresUrl, {
+//	  mode: 'no-cors',
+//      method: 'POST',
+//      headers: {
+//		'Authorization': `Bearer ${GITHUB_TOKEN}`,
+//		'Access-Control-Allow-Origin': '*',
+//        'Content-Type': 'application/json',
+//      },
+//      body: JSON.stringify(scoresData),
+//    });
+//
+//    if (!response.ok) {
+//      throw new Error(`Failed to update scores. Status: ${response.status}`);
+//    }
+//  } catch (error) {
+//    throw new Error(`Error updating scores: ${error.message}`);
+//  }
+//}
+
+const updateScores = async (scoresData) => {
   try {
-    const response = await fetch(scoresUrl, {
-      method: 'PUT',
+    // Call the Netlify function endpoint with scoresData as a parameter
+    const response = await fetch('/.netlify/functions/updateScores', {
+      method: 'PUT', // or 'POST' depending on your serverless function
+      body: JSON.stringify(scoresData),
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(scoresData),
     });
 
     if (!response.ok) {
-      throw new Error(`Failed to update scores. Status: ${response.status}`);
+      console.error(`Failed to update scores. Status: ${response.status}`);
+      return;
     }
+
+    const result = await response.json();
+
+    // Process the result as needed
+    console.log(result);
   } catch (error) {
-    throw new Error(`Error updating scores: ${error.message}`);
+    console.error(`Error updating scores: ${error.message}`);
   }
-}
+};
