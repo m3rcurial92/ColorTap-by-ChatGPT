@@ -1,4 +1,5 @@
 // updateScores.js
+import fetch from "node-fetch";
 
 exports.handler = async (event, context) => {
   try {
@@ -7,8 +8,6 @@ exports.handler = async (event, context) => {
     const scoresUrl = 'https://raw.githubusercontent.com/m3rcurial92/colortap.io/main/scores.json';
     const { GITHUB_TOKEN } = process.env;
 
-    // Fetch the current scores from GitHub
-    const fetch = require('node-fetch');
     const response = await fetch(scoresUrl, {
       method: 'GET',
       headers: {
