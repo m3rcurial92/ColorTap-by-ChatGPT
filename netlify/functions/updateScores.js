@@ -2,6 +2,8 @@
 
 //import fetch from 'node-fetch';
 //const fetch = require('node-fetch').default || require('node-fetch');
+const fetch = require('node-fetch');
+const { default: fetch } = await import('node-fetch');
 
 exports.handler = async (event, context) => {
   try {
@@ -9,10 +11,6 @@ exports.handler = async (event, context) => {
 
     const scoresUrl = 'https://raw.githubusercontent.com/m3rcurial92/colortap.io/main/scores.json';
     const { GITHUB_TOKEN } = process.env;
-
-	// Use the 'esm' module loader to enable ES Module syntax in CommonJS
-    require = require('esm')(module);
-    const fetch = require('node-fetch');
 
     // Fetch the current scores from GitHub
     const response = await fetch(scoresUrl, {
