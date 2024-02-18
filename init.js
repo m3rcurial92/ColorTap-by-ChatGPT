@@ -5,6 +5,7 @@ const colorGrid = document.getElementById('colorGrid');
 
 const startingSquareSize = 300; // Adjust the starting size as needed
 
+let gridSize = 2; // Initial grid size
 let targetColor;
 
 // Set initial target color
@@ -23,9 +24,9 @@ function generateRandomColor() {
 }
 
 function generatePastelColor() {
-    const hue = Math.floor(Math.random() * 360); // Random hue value
-    const saturation = Math.floor(Math.random() * 50) + 50; // Adjust saturation to create pastel colors
-    const lightness = Math.floor(Math.random() * 40) + 60; // Adjust lightness to create pastel colors
+	const hue = Math.floor(Math.random() * 360); // Random hue value
+    const saturation = Math.floor(Math.random() * 80) + 20; // Adjust saturation to create pastel colors
+    const lightness = Math.floor(Math.random() * 25) + 50; // Adjust lightness to create pastel colors
 
     // Convert HSL to RGB
     const rgbColor = hslToRgb(hue / 360, saturation / 100, lightness / 100);

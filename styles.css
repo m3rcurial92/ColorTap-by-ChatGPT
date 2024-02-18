@@ -75,6 +75,11 @@ body {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Subtle box-shadow on hover */
 }
 
+.dark-theme .square:not(#targetColor):hover {
+    border-color: #f0f0f0;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.9);
+}
+
 #gameControls {
     display: flex;
     justify-content: center;
@@ -202,7 +207,7 @@ body {
 
 .menuIcon {
     cursor: pointer;
-	margin-top: 4px;
+	margin-top: 5px;
 }
 
 #themeToggle {

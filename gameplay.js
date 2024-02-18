@@ -14,7 +14,6 @@ let timerMilliseconds = 0;
 let gameInProgress = false;
 let cumulativeTime = 0;
 let gameStopped = true; // Flag to track whether the game is stopped
-let gridSize = 2; // Initial grid size
 let totalElapsedTime = 0;
 let maxTime = 60000;
 let correctClicks = 0;
