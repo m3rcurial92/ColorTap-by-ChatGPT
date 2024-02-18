@@ -1,7 +1,5 @@
 // updateScores.js
 
-const { default: fetch } = await import('node-fetch');
-
 exports.handler = async (event, context) => {
   try {
 	console.log('Function triggered'); // Add this line for logging
@@ -10,6 +8,7 @@ exports.handler = async (event, context) => {
     const { GITHUB_TOKEN } = process.env;
 
     // Fetch the current scores from GitHub
+    const fetch = require('node-fetch');
     const response = await fetch(scoresUrl, {
       method: 'GET',
       headers: {
