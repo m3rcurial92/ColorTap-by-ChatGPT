@@ -16,6 +16,7 @@ let cumulativeTime = 0;
 let gameStopped = true; // Flag to track whether the game is stopped
 let gridSize = 2; // Initial grid size
 let totalElapsedTime = 0;
+let maxTime = 10000;
 let correctClicks = 0;
 let incorrectClicks = 0;
 
@@ -83,7 +84,7 @@ function updateTimer() {
     timerMilliseconds = elapsedTime; // Update the timerMilliseconds for score calculation
 	
 	// Check if the total elapsed time exceeds 1 minute (60,000 milliseconds)
-    if (totalElapsedTime > 60000) {
+    if (totalElapsedTime > maxTime) {
         showSummary(); // Display summary window
     }
 }
@@ -169,6 +170,9 @@ function showSummary() {
         bestScore = score;
         // Update the bestScore in localStorage
         localStorage.setItem('bestScore', bestScore);
+		
+		// Call this function when the game ends to add the player's score
+		fetchScores();
     }
 	
     const summaryContainer = document.getElementById('summaryContainer'); // Replace 'summaryContainer' with the actual ID of the HTML element where you want to display the summary

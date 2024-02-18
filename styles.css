@@ -1,11 +1,28 @@
+.light-theme {
+    background-color: #f0f0f0; /* Set the background color for the light theme */
+    color: #333; /* Set the text color for the light theme */
+}
+
+.dark-theme {
+    background-color: #333; /* Set the background color for the dark theme */
+    color: #f0f0f0; /* Set the text color for the dark theme */
+}
+
+.dark-theme #menuBar {
+    background-color: #555;
+	color: #333;
+}
+
 body {
     display: flex;
+	flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100%;
     margin: 0;
     background-color: #f0f0f0;
 	font-family: 'Roboto', sans-serif;
+	transition: background-color 0.5s;
 }
 
 .container {
@@ -51,11 +68,6 @@ body {
     width: 100px;
     height: 100px;
     cursor: pointer;
-}
-
-.square:not(#targetColor) {
-	border: 1px solid #f0f0f0; /* Lighter grey border */
-    transition: border-color 0.3s, box-shadow 0.3s; /* Transition for smooth effect */
 }
 
 .square:not(#targetColor):hover {
@@ -115,6 +127,10 @@ body {
     z-index: 1;
 }
 
+.dark-theme #summaryContainer {
+    background-color: rgba(25, 25, 25, 0.9); /* Light theme modal background color */
+}
+
 .modal-content {
     position: absolute;
     top: 50%;
@@ -126,6 +142,11 @@ body {
     background-color: white;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.dark-theme .modal-content {
+    background-color: #333; 
+    color: #f0f0f0;
 }
 
 #summaryModal h2 {
@@ -151,6 +172,39 @@ body {
 .close:hover,
 .close:focus {
     color: #333;
+}
+
+#menuBar {
+    background-color: #333; /* Darker background color */
+	overflow: hidden;
+    width: 100%; /* Make the menu bar full-width */
+	box-sizing: border-box; /* Include padding and border in the total width */
+	padding: 10px;
+    padding-left: 30px;
+	padding-right: 30px;
+    display: flex;
+    justify-content: space-between; /* Align items to both ends */
+}
+
+/* Remove border and box-shadow for the input field */
+#menuBar input {
+    border: none;
+    box-shadow: none;
+    padding: 2px; /* Add some padding for better aesthetics */
+	outline: none; /* Remove the outline when clicked */
+}
+
+/* Optional: Add a subtle border when not focused */
+#settingsBar input:not(:focus) {
+    border: 1px solid #ccc;
+}
+
+.menuIcon {
+    cursor: pointer;
+}
+
+#themeToggle {
+    margin-left: auto; /* Use margin-left: auto to push it to the right */
 }
 
 /* Center the menu on mobile devices */
