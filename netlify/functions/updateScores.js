@@ -1,6 +1,6 @@
 import fetch from 'node-fetch';
 
-exports.handler = async (event, context) => {
+export const handler = async (event, context) => {
   try {
 	console.log('Function triggered'); // Add this line for logging
 
