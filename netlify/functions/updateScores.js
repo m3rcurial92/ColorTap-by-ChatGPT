@@ -1,6 +1,6 @@
-const fetch = require('node-fetch');
-require('fetch-blob');
-require('formdata-polyfill');
+import fetch from 'node-fetch';
+import 'fetch-blob';
+import 'formdata-polyfill';
 
 exports.handler = async (event, context) => {
   try {
