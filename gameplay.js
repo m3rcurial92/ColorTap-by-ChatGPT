@@ -15,7 +15,7 @@ let gameInProgress = false;
 let cumulativeTime = 0;
 let gameStopped = true; // Flag to track whether the game is stopped
 let totalElapsedTime = 0;
-let maxTime = 1000;
+let maxTime = 60000;
 let correctClicks = 0;
 let incorrectClicks = 0;
 
