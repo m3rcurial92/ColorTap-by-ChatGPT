@@ -1,5 +1,7 @@
 // updateScores.js
 import fetch from "node-fetch";
+require('fetch-blob');
+require('formdata-polyfill');
 
 exports.handler = async (event, context) => {
   try {
