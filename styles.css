@@ -191,6 +191,7 @@ body {
     border: none;
     box-shadow: none;
     padding: 2px; /* Add some padding for better aesthetics */
+	padding-left: 10px;
 	outline: none; /* Remove the outline when clicked */
 }
 
@@ -201,10 +202,21 @@ body {
 
 .menuIcon {
     cursor: pointer;
+	margin-top: 4px;
 }
 
 #themeToggle {
     margin-left: auto; /* Use margin-left: auto to push it to the right */
+}
+
+#clearBestScoreButton {
+    padding: 8px 16px;
+    background-color: #867571;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+	margin-left: 10px;
 }
 
 /* Center the menu on mobile devices */

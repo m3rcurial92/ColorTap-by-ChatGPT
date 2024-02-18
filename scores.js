@@ -1,4 +1,4 @@
-const scoresUrl = 'https://m3rcurial92.github.io/colortap.io/main/scores.json';
+const scoresUrl = 'https://m3rcurial92.github.io/colortap.io/scores.json';
 
 const playerNameInput = document.getElementById('playerName');
 const playerName = playerNameInput.value || 'Anonymous'; // Use 'Anonymous' if no name is provided

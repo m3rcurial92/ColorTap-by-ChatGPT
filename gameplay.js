@@ -16,7 +16,7 @@ let cumulativeTime = 0;
 let gameStopped = true; // Flag to track whether the game is stopped
 let gridSize = 2; // Initial grid size
 let totalElapsedTime = 0;
-let maxTime = 10000;
+let maxTime = 60000;
 let correctClicks = 0;
 let incorrectClicks = 0;
 
@@ -75,7 +75,6 @@ function updateTimer() {
     const milliseconds = Math.floor(elapsedTime % 1000);
 
 	totalElapsedTime = elapsedTime + cumulativeTime; // Update totalElapsedTime
-	console.log(totalElapsedTime);
 	
     // Ensure milliseconds are displayed as 2 digits
     const formattedMilliseconds = milliseconds.toString().padStart(3, '0').slice(0, 2);
