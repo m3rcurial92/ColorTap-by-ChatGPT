@@ -8,6 +8,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "type": "module",
   "dependencies": {
     "fetch-blob": "^4.0.0",
     "formdata-polyfill": "^4.0.10",
